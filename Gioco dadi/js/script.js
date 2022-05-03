@@ -1,5 +1,8 @@
-// Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
-// Stabilire il vincitore, in base a chi fa il punteggio più alto.
+// lancio dei dadi:
+// 1. genera un numero randomico da 1 a 6 per il giocatore
+// 2. genera un numero randomico da 1 a 6 per il computer
+// 3. calcola qual è il numero più alto
+// 4. dichiara il vincitore del lancio dei dadi
 const result = document.getElementById("result")
 const btnPlay = document.getElementById("play")
 btnPlay.addEventListener("click",
@@ -12,13 +15,13 @@ btnPlay.addEventListener("click",
         console.log(computer);
         if (playerDice > computerDice) {
             result.style.display = "block";
-            result.innerHTML = `HAI VINTO!!!`
+            result.innerHTML = `VICTORY!!!`
         } else if (playerDice < computerDice) {
             result.style.display = "block";
-            result.innerHTML = `HAI PERSO`
+            result.innerHTML = `DEFEAT`
         } else {
             result.style.display = "block";
-            result.innerHTML = `PAREGGIO`
+            result.innerHTML = `TIE`
         }
     }
 );

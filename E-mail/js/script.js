@@ -1,12 +1,21 @@
-// Chiedi all’utente la sua email,
-// controlla che sia nella lista di chi può accedere,
-// stampa un messaggio appropriato sull’esito del controllo.
-const emailRequest = prompt("inserisci la tua e-mail");
+// Log-in wannabe:
+// 1. chiedi all'utente la sua e-mail
+// 2. controlla nella lista delle persone registrate se la mail inserita è presente
+// 3. stampa un benvenuto per gli utenti registrati
+// 4. stampa un registrati per gli utenti non registrati
+const emailRequest = prompt("Insert your E-Mail");
 console.log(emailRequest);
+let newUser = false;
 const emailUser = ["pino@gmail.it" , "maria@gmail.it" , "ugo@gmail.it"]
-if (emailUser.includes ("pino@gmail.it")) {
-    console.log(emailUser);
-    alert("Welcome back");
-} else {
-    alert("User not valid");
+for (let i=0 ; i < emailUser.length ; i++) {
+    if (emailUser[i] === emailRequest) {
+        newUser = true;
+    }
 }
+const control = document.getElementById("control")
+if (newUser == true) {
+    control.innerHTML = `Welcome back`
+} else {
+    control.innerHTML = `Sign in`
+}
+console.log(newUser);
